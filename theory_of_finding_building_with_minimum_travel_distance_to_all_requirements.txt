@@ -1,0 +1,36 @@
+
+# This is the theory(pseudocode) behind my solution to the question asked by Clément Mihailescu in the youtube video below
+# [ Link: https://www.youtube.com/watch?v=rw4s4M3hFfs&t=516s ].
+# It is really far from good but it works. Let's optimize and make it better!
+# Credit to "@alex nice" in the comments section of the Youtube video for his suggestion. Thank you mate!
+
+
+-	Get each item(building) and store its index in a variable i.
+	
+	-	Then for each element(gym, school or store) in the item(building), check if the value is true or false.
+		-	If the element's value is true, 
+				- Return 0
+		-	Else(i.e. if it's false)
+				- Go through the entire list and find all the instances where the element's value is true.
+				- Store the indexes of all those instances in a new list variable.
+				- For each stored index instance, get the distance from the item(building) to that stored index instance by subtracting the stored variable "i" 
+				   (which is the item/building's index) from stored index instance. 
+				- Get the absolute values of the results you obtained from the step above and append to a new list variable.
+				- Return the most minimum value in that new list variable. The returned value is the shortest distance to the next item(building)
+		
+	-	Then, continuing using the suggestions from "@alex nice" (thank you mate!), we build a dictionary with the index as "i"(item/building's index) and the 
+		values returned from value check (we did in the if-else statement above) in a list.
+	
+			We will end up with a dictionary like so
+				Distances = { 0:[1,0,4], 1: [0,1,3], 2: [0,0,2], 3: [1,0,1], 4 : [2,0,0]  etc }		OR
+				Distances = { building1:[1,0,4], building2: [0,1,3], building3: [0,0,2], building4: [1,0,1], building5 : [2,0,0]  etc }
+
+	- 	Next we find the maximum distance in each building distance array above i.e as explained earlier
+		
+			MaxDistances = [4,3,2,1,2] 
+
+	-	Finally, we return the index of minimum value in MaxDistances as the answer.
+
+	-	The answer will be 1 at index 3, which is building 4.
+
+		
