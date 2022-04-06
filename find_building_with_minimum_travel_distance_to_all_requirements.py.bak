@@ -45,7 +45,7 @@ def check_val(row, key):
         checkList = list([k for (k, v) in enumerate(blocks) if v[key] is True])
 
         for index in checkList:  
-            dist = abs(index - row)
+            dist = abs(index - i)
             ans.append(dist)
 
         return min(ans)
