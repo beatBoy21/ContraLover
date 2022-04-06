@@ -11,7 +11,7 @@
 		-	If the element's value is true, 
 				- Return 0
 		-	Else(i.e. if it's false)
-				- Go through the entire list of items(buildings) and find all the instances where the element's value is true.
+				- Go through the entire list and find all the instances where the element's value is true.
 				- Store the indexes of all those instances in a new list variable.
 				- For each stored index instance, get the distance from the item(building) to that stored index instance by subtracting the stored variable "i" 
 				   (which is the item/building's index) from stored index instance. 
